@@ -3,28 +3,14 @@ const router = express.Router();
 
 router.get("/navigation", async (req, res, next) => {
   try {
-    const navigation = [
-      {
-        categoryNum: 1,
-        categoryName: "Menu1",
-      },
-      {
-        categoryNum: 2,
-        categoryName: "Menu2",
-      },
-      {
-        categoryNum: 3,
-        categoryName: "Menu3",
-      },
-      {
-        categoryNum: 4,
-        categoryName: "Menu4",
-      },
-      {
-        categoryNum: 5,
-        categoryName: "Menu5",
-      },
-    ];
+    const navigation = [];
+    for (let i = 0; i < 10; i++) {
+      const defaultItem = {
+        categoryNum: `${i}`,
+        categoryName: `Menu${i}`,
+      };
+      navigation.push(defaultItem);
+    }
     res.status(200).json(navigation);
     console.log("==> nav", navigation);
   } catch (err) {
@@ -34,28 +20,14 @@ router.get("/navigation", async (req, res, next) => {
 
 router.get("/sideNavigation", async (req, res, next) => {
   try {
-    const sideNavigation = [
-      {
-        categoryNum: 1,
-        categoryName: "Side1",
-      },
-      {
-        categoryNum: 2,
-        categoryName: "Side2",
-      },
-      {
-        categoryNum: 3,
-        categoryName: "Side3",
-      },
-      {
-        categoryNum: 4,
-        categoryName: "Side4",
-      },
-      {
-        categoryNum: 5,
-        categoryName: "Side5",
-      },
-    ];
+    const sideNavigation = [];
+    for (let i = 0; i < 10; i++) {
+      const defaultItem = {
+        categoryNum: `${i}`,
+        categoryName: `Side${i}`,
+      };
+      sideNavigation.push(defaultItem);
+    }
 
     res.status(200).json(sideNavigation);
     console.log("side Menu", sideNavigation);
